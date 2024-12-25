@@ -9,8 +9,18 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>lab02_httpserver</module>
         <module>lab01</module>
+        <module>lab02_httpserver</module>
+        <module>Lab03_dynamic_server</module>
+        <module>lab04_servlet</module>
+        <module>lab05_templates</module>
+        <module>lab06_db</module>
+        <module>lab07_filter</module>
+        <module>lab07_filter_release</module>
+        <module>lab08</module>
+        <module>lab09_one_to_one</module>
+        <module>lab10_hikaricp_transactions</module>
+        <module>semester_work</module>
     </modules>
 
     <properties>

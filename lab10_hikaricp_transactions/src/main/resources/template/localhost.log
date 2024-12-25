@@ -1,0 +1,38 @@
+2024-12-18 11:09:07,319 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab10.listener.Lab10ContextListener- contextInitialized
+2024-12-18 11:09:08,543 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab10.repository.DbWork- start migration
+2024-12-18 11:09:08,657 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.0)
+2024-12-18 11:09:08,750 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbBaseline- Schema history table "public"."flyway_schema_history" already initialized with (1,<< Flyway Baseline >>). Skipping.
+2024-12-18 11:09:08,816 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.038s)
+2024-12-18 11:09:08,836 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1
+2024-12-18 11:09:08,840 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-18 11:09:08,842 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab10.repository.DbWork- migration done
+2024-12-18 11:50:01,601 [RMI TCP Connection(3)-127.0.0.1] INFO  ru.itis.dis301.lab10.listener.Lab10ContextListener- contextInitialized
+2024-12-18 11:50:02,781 [RMI TCP Connection(3)-127.0.0.1] INFO  ru.itis.dis301.lab10.repository.DbWork- start migration
+2024-12-18 11:50:02,874 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.0)
+2024-12-18 11:50:02,944 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbBaseline- Schema history table "public"."flyway_schema_history" already initialized with (1,<< Flyway Baseline >>). Skipping.
+2024-12-18 11:50:03,015 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.040s)
+2024-12-18 11:50:03,031 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1
+2024-12-18 11:50:03,033 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-18 11:50:03,036 [RMI TCP Connection(3)-127.0.0.1] INFO  ru.itis.dis301.lab10.repository.DbWork- migration done
+2024-12-18 11:51:27,272 [Catalina-utility-1] INFO  ru.itis.dis301.lab10.listener.Lab10ContextListener- contextInitialized
+2024-12-18 11:51:28,766 [Catalina-utility-1] INFO  ru.itis.dis301.lab10.repository.DbWork- start migration
+2024-12-18 11:51:28,877 [Catalina-utility-1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.0)
+2024-12-18 11:51:28,976 [Catalina-utility-1] INFO  org.flywaydb.core.internal.command.DbBaseline- Schema history table "public"."flyway_schema_history" already initialized with (1,<< Flyway Baseline >>). Skipping.
+2024-12-18 11:51:29,049 [Catalina-utility-1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.042s)
+2024-12-18 11:51:29,067 [Catalina-utility-1] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1
+2024-12-18 11:51:29,070 [Catalina-utility-1] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-18 11:51:29,072 [Catalina-utility-1] INFO  ru.itis.dis301.lab10.repository.DbWork- migration done
+2024-12-18 11:51:49,666 [RMI TCP Connection(3)-127.0.0.1] INFO  ru.itis.dis301.lab10.listener.Lab10ContextListener- contextInitialized
+2024-12-18 11:51:50,938 [RMI TCP Connection(3)-127.0.0.1] INFO  ru.itis.dis301.lab10.repository.DbWork- start migration
+2024-12-18 11:51:51,073 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.0)
+2024-12-18 11:51:51,151 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbBaseline- Schema history table "public"."flyway_schema_history" already initialized with (1,<< Flyway Baseline >>). Skipping.
+2024-12-18 11:51:51,229 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.045s)
+2024-12-18 11:51:51,246 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1
+2024-12-18 11:51:51,249 [RMI TCP Connection(3)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-18 11:51:51,250 [RMI TCP Connection(3)-127.0.0.1] INFO  ru.itis.dis301.lab10.repository.DbWork- migration done
+2024-12-18 11:51:52,055 [http-nio-8080-exec-10] INFO  ru.itis.dis301.homework.DbWork- start migration
+2024-12-18 11:51:52,069 [http-nio-8080-exec-10] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.0)
+2024-12-18 11:51:52,096 [http-nio-8080-exec-10] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.013s)
+2024-12-18 11:51:53,059 [http-nio-8080-exec-10] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1
+2024-12-18 11:51:53,059 [http-nio-8080-exec-10] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-18 11:51:53,064 [http-nio-8080-exec-10] INFO  ru.itis.dis301.homework.DbWork- migration done

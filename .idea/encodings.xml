@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Lab03_dynamic_server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Lab03_dynamic_server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Lab05_template/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Lab05_template/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab01/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab01/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab02_httpserver/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab02_httpserver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab04_servlet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab04_servlet/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab05_templates/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab05_templates/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab06_db/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab06_db/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab07_filter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab07_filter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab07_filter_release/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab07_filter_release/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab08/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab08/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab09_one_to_one/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab09_one_to_one/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab10_hikaricp_transactions/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab10_hikaricp_transactions/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/semester_work/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/semester_work/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

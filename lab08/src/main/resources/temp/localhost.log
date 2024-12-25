@@ -1,0 +1,14 @@
+2024-12-04 15:27:29,656 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab08.Lab08ContextListener- start migration config
+2024-12-04 15:27:30,117 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab08.Lab08ContextListener- start migration
+2024-12-04 15:27:30,577 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/lab08 (PostgreSQL 17.0)
+2024-12-04 15:27:30,678 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.060s)
+2024-12-04 15:27:30,928 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1.1
+2024-12-04 15:27:30,933 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-04 15:27:30,938 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab08.Lab08ContextListener- migration done
+2024-12-04 15:27:39,095 [Catalina-utility-2] INFO  ru.itis.dis301.lab08.Lab08ContextListener- start migration config
+2024-12-04 15:27:39,609 [Catalina-utility-2] INFO  ru.itis.dis301.lab08.Lab08ContextListener- start migration
+2024-12-04 15:27:40,110 [Catalina-utility-2] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/lab08 (PostgreSQL 17.0)
+2024-12-04 15:27:40,210 [Catalina-utility-2] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 2 migrations (execution time 00:00.052s)
+2024-12-04 15:27:40,453 [Catalina-utility-2] INFO  org.flywaydb.core.internal.command.DbMigrate- Current version of schema "public": 1.1
+2024-12-04 15:27:40,455 [Catalina-utility-2] INFO  org.flywaydb.core.internal.command.DbMigrate- Schema "public" is up to date. No migration necessary.
+2024-12-04 15:27:40,461 [Catalina-utility-2] INFO  ru.itis.dis301.lab08.Lab08ContextListener- migration done

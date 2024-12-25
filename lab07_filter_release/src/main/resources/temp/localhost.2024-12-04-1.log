@@ -1,0 +1,24 @@
+2024-12-04 15:21:19,872 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration config
+2024-12-04 15:21:20,437 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration
+2024-12-04 15:21:20,758 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/lab06 (PostgreSQL 17.0)
+2024-12-04 15:21:20,836 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory- Schema history table "public"."flyway_schema_history" does not exist yet
+2024-12-04 15:21:20,840 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 0 migrations (execution time 00:00.020s)
+2024-12-04 15:21:20,840 [RMI TCP Connection(2)-127.0.0.1] WARN  org.flywaydb.core.internal.command.DbValidate- No migrations found. Are your locations set up correctly?
+2024-12-04 15:21:28,242 [Catalina-utility-2] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration config
+2024-12-04 15:21:28,764 [Catalina-utility-2] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration
+2024-12-04 15:21:29,072 [Catalina-utility-2] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/lab06 (PostgreSQL 17.0)
+2024-12-04 15:21:29,132 [Catalina-utility-2] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory- Schema history table "public"."flyway_schema_history" does not exist yet
+2024-12-04 15:21:29,136 [Catalina-utility-2] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 0 migrations (execution time 00:00.021s)
+2024-12-04 15:21:29,137 [Catalina-utility-2] WARN  org.flywaydb.core.internal.command.DbValidate- No migrations found. Are your locations set up correctly?
+2024-12-04 15:27:26,700 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration config
+2024-12-04 15:27:27,175 [RMI TCP Connection(2)-127.0.0.1] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration
+2024-12-04 15:27:27,486 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/lab06 (PostgreSQL 17.0)
+2024-12-04 15:27:27,548 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory- Schema history table "public"."flyway_schema_history" does not exist yet
+2024-12-04 15:27:27,552 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 0 migrations (execution time 00:00.019s)
+2024-12-04 15:27:27,553 [RMI TCP Connection(2)-127.0.0.1] WARN  org.flywaydb.core.internal.command.DbValidate- No migrations found. Are your locations set up correctly?
+2024-12-04 15:27:35,930 [Catalina-utility-2] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration config
+2024-12-04 15:27:36,565 [Catalina-utility-2] INFO  ru.itis.dis301.lab07.listener.Lab07ContextListener- start migration
+2024-12-04 15:27:36,935 [Catalina-utility-2] INFO  org.flywaydb.core.FlywayExecutor- Database: jdbc:postgresql://localhost:5432/lab06 (PostgreSQL 17.0)
+2024-12-04 15:27:37,006 [Catalina-utility-2] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory- Schema history table "public"."flyway_schema_history" does not exist yet
+2024-12-04 15:27:37,009 [Catalina-utility-2] INFO  org.flywaydb.core.internal.command.DbValidate- Successfully validated 0 migrations (execution time 00:00.022s)
+2024-12-04 15:27:37,010 [Catalina-utility-2] WARN  org.flywaydb.core.internal.command.DbValidate- No migrations found. Are your locations set up correctly?
