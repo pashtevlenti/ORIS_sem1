@@ -21,6 +21,8 @@
         <module>lab09_one_to_one</module>
         <module>lab10_hikaricp_transactions</module>
         <module>semester_work</module>
+        <module>startSwing</module>
+        <module>semester_work_2</module>
     </modules>
 
     <properties>

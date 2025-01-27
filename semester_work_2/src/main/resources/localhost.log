@@ -1,0 +1,181 @@
+2025-01-27 19:21:26,612 [Thread-3] INFO  ru.itis.Client- 
+2025-01-27 19:21:26,769 [Thread-2] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:21:43,977 [Thread-3] INFO  ru.itis.Client- 
+2025-01-27 19:21:44,132 [Thread-3] INFO  ru.itis.ClientHandler- Player joined room: 3
+2025-01-27 19:21:44,133 [Thread-3] INFO  ru.itis.GameRoom- Player added to room: 3
+2025-01-27 19:22:21,970 [Thread-3] INFO  ru.itis.Client- 
+2025-01-27 19:22:22,098 [Thread-4] INFO  ru.itis.ClientHandler- Player joined room: 3
+2025-01-27 19:22:22,099 [Thread-4] INFO  ru.itis.GameRoom- Player added to room: 3
+2025-01-27 19:24:12,602 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:24:12,757 [Thread-0] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:24:12,763 [Thread-0] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 19:24:12,763 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:24:50,386 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:24:50,523 [Thread-1] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:24:50,524 [Thread-1] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 19:24:50,524 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:24:50,524 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:24:50,525 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:25:06,338 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:25:06,338 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:25:21,392 [Thread-0] ERROR ru.itis.ClientHandler- Error in client handler
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794) ~[?:?]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:173) ~[?:?]
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:189) ~[?:?]
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:?]
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:371) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:348) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:437) ~[?:?]
+	at ru.itis.ClientHandler.run(ClientHandler.java:54) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+2025-01-27 19:25:22,567 [Thread-1] ERROR ru.itis.ClientHandler- Error in client handler
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794) ~[?:?]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:173) ~[?:?]
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:189) ~[?:?]
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:?]
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:371) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:348) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:437) ~[?:?]
+	at ru.itis.ClientHandler.run(ClientHandler.java:54) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+2025-01-27 19:25:34,952 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:25:35,085 [Thread-2] INFO  ru.itis.ClientHandler- Player joined room: 3
+2025-01-27 19:25:35,086 [Thread-2] INFO  ru.itis.GameRoom- Player added to room: 3
+2025-01-27 19:25:35,086 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:25:38,829 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:25:38,975 [Thread-3] INFO  ru.itis.ClientHandler- Player joined room: 3
+2025-01-27 19:25:38,976 [Thread-3] INFO  ru.itis.GameRoom- Player added to room: 3
+2025-01-27 19:25:38,977 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:25:38,977 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:25:38,977 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:26:03,852 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:26:03,852 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:28:56,525 [Thread-3] INFO  ru.itis.Client- MOVE 5,6
+2025-01-27 19:32:16,259 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:32:16,401 [Thread-0] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:32:16,405 [Thread-0] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 19:32:16,405 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:32:20,965 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:32:21,088 [Thread-1] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:32:21,089 [Thread-1] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 19:32:21,090 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:32:21,091 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:32:21,092 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:32:21,096 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 19:32:21,097 [Thread-3] INFO  ru.itis.Client- Reversi ready
+2025-01-27 19:32:22,783 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:32:22,784 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:32:22,785 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 19:32:22,785 [Thread-3] INFO  ru.itis.Client- Reversi ready
+2025-01-27 19:32:39,375 [Thread-0] ERROR ru.itis.ClientHandler- Error in client handler
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794) ~[?:?]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:173) ~[?:?]
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:189) ~[?:?]
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:?]
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:371) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:348) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:437) ~[?:?]
+	at ru.itis.ClientHandler.run(ClientHandler.java:54) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+2025-01-27 19:32:40,664 [Thread-1] ERROR ru.itis.ClientHandler- Error in client handler
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:345) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:794) ~[?:?]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219) ~[?:?]
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:173) ~[?:?]
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:189) ~[?:?]
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:?]
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:371) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:348) ~[?:?]
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:437) ~[?:?]
+	at ru.itis.ClientHandler.run(ClientHandler.java:54) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+2025-01-27 19:32:51,644 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:32:51,771 [Thread-2] INFO  ru.itis.ClientHandler- Player joined room: 2
+2025-01-27 19:32:51,771 [Thread-2] INFO  ru.itis.GameRoom- Player added to room: 2
+2025-01-27 19:32:51,772 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:32:54,722 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:32:54,858 [Thread-3] INFO  ru.itis.ClientHandler- Player joined room: 2
+2025-01-27 19:32:54,859 [Thread-3] INFO  ru.itis.GameRoom- Player added to room: 2
+2025-01-27 19:32:54,860 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:32:54,861 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:32:54,861 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:32:58,300 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 19:32:58,300 [Thread-3] INFO  ru.itis.Client- Reversi ready
+2025-01-27 19:33:20,309 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:33:20,309 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:33:20,310 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 19:33:20,310 [Thread-3] INFO  ru.itis.Client- Reversi ready
+2025-01-27 19:43:20,376 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:43:20,531 [Thread-0] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:43:20,535 [Thread-0] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 19:43:20,536 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:43:26,046 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 19:43:26,189 [Thread-1] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 19:43:26,190 [Thread-1] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 19:43:26,190 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 19:43:26,190 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:43:26,191 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 19:43:27,861 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 19:43:32,018 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:43:32,018 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 19:43:41,439 [Thread-3] INFO  ru.itis.Client- MOVE 4,6
+2025-01-27 19:44:05,885 [Thread-3] INFO  ru.itis.Client- MOVE 3,6
+2025-01-27 19:44:08,393 [Thread-3] INFO  ru.itis.Client- MOVE 3,7
+2025-01-27 22:06:33,416 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 22:06:33,576 [Thread-0] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 22:06:33,580 [Thread-0] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 22:06:33,582 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 22:06:37,830 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 22:06:37,969 [Thread-1] INFO  ru.itis.ClientHandler- Player joined room: 1
+2025-01-27 22:06:37,970 [Thread-1] INFO  ru.itis.GameRoom- Player added to room: 1
+2025-01-27 22:06:37,970 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 22:06:37,970 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 22:06:37,972 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 22:06:48,099 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 22:07:06,306 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 22:07:06,306 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 22:07:41,320 [Thread-3] INFO  ru.itis.Client- MOVE 3,5
+2025-01-27 22:09:04,965 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 22:09:05,106 [Thread-2] INFO  ru.itis.ClientHandler- Player joined room: 12
+2025-01-27 22:09:05,107 [Thread-2] INFO  ru.itis.GameRoom- Player added to room: 12
+2025-01-27 22:09:05,108 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 22:09:08,888 [Thread-3] INFO  ru.itis.Client- Enter room name:
+2025-01-27 22:09:09,025 [Thread-3] INFO  ru.itis.ClientHandler- Player joined room: 12
+2025-01-27 22:09:09,026 [Thread-3] INFO  ru.itis.GameRoom- Player added to room: 12
+2025-01-27 22:09:09,027 [Thread-3] INFO  ru.itis.Client- Waiting for another player...
+2025-01-27 22:09:09,027 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 22:09:09,027 [Thread-3] INFO  ru.itis.Client- Both players connected. Send READY to start.
+2025-01-27 22:09:12,427 [Thread-3] INFO  ru.itis.Client- READY
+2025-01-27 22:09:15,927 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 22:09:15,929 [Thread-3] INFO  ru.itis.Client- START
+2025-01-27 22:09:21,904 [Thread-3] INFO  ru.itis.Client- MOVE 2,1
+2025-01-27 22:09:22,848 [Thread-3] INFO  ru.itis.Client- MOVE 0,5
+2025-01-27 22:09:26,137 [Thread-3] INFO  ru.itis.Client- MOVE 7,3
+2025-01-27 22:09:27,541 [Thread-3] INFO  ru.itis.Client- MOVE 7,0
+2025-01-27 22:09:29,840 [Thread-3] INFO  ru.itis.Client- MOVE 5,4
