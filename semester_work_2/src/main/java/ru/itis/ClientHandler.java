@@ -20,6 +20,9 @@ public class ClientHandler implements Runnable {
     private PrintWriter out;
     private boolean isReady = false;
 
+    private boolean isMyTurn = true;
+
+
     public ClientHandler(Socket socket, Map<String, GameRoom> rooms) {
         this.socket = socket;
         this.rooms = rooms;
@@ -56,6 +59,10 @@ public class ClientHandler implements Runnable {
 
                 if ("READY".equals(input)) {
                     currentRoom.setPlayerReady(this);
+                } else if ("NoYourTurn".equals(input)) {
+                    if (currentRoom != null) {
+                        currentRoom.processTurn(this);
+                    }
                 } else if (input.startsWith("MOVE")) {
                     if (currentRoom != null) {
                         currentRoom.processMove(input, this);
@@ -85,5 +92,12 @@ public class ClientHandler implements Runnable {
 
     public void sendReady() {
         out.println("READY");
+    }
+    public void setIsMyTurn(boolean isMyTurn) {
+        this.isMyTurn = isMyTurn;
+    }
+
+    public void sendTurn(String turn) {
+        out.println(turn);
     }
 }

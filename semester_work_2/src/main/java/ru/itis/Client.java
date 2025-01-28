@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +20,8 @@ public class Client extends Application {
     private Socket socket;
     private PrintWriter out;
     private BufferedReader in;
-    private ReversiController reversiController; // Связь с контроллером
+    private ReversiController reversiController;
+
 
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Client extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/name.fxml"));
         StackPane root = loader.load();
-        Scene scene = new Scene(root, 1000, 500);
+        Scene scene = new Scene(root, 600, 400);
         primaryStage.setTitle("Reversi");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -53,9 +53,15 @@ public class Client extends Application {
                         Platform.runLater(() -> receiveUpdate(receivedMessage));
                     } else if (message.equals("START")) {
                         Platform.runLater(() -> reversiController.enableBoard());
-                    } else if (message.equals("READY")) {
-
+                        out.println("NoYourTurn");
+                    }else if (message.equals("YourTurn")) {
+                        Platform.runLater(() -> reversiController.setMyTurn(true)); // Разрешаем ход.
+                    } else if (message.equals("NoYourTurn")) {
+                        Platform.runLater(() -> reversiController.setMyTurn(false));
+                    }
+                    else if (message.equals("READY")) {
                         Platform.runLater(() -> reversiController.showMessage("You are ready, we are waiting for the opponent to be ready."));
+                        reversiController.setIsMyTurn(true);
                     } else {
                         System.out.println(message);
                     }
@@ -72,6 +78,9 @@ public class Client extends Application {
 
     public void sendReady() {
         out.println("READY"); // Уведомляем сервер, что игрок готов
+    }
+    public void sendTurn(String turn) {
+        out.println(turn);
     }
 
     public void receiveUpdate(String message) {
@@ -92,4 +101,6 @@ public class Client extends Application {
     public void sendRoomName(String roomName) {
         out.println(roomName);
     }
+
+
 }

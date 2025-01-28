@@ -3,89 +3,102 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.control.Button?>
-<GridPane fx:id="gridPane" fx:controller="ru.itis.controller.ReversiController" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER"
-          hgap="5" vgap="5" style="-fx-background-color: lightgray; -fx-padding: 10;">
-    <!-- Размещение прямоугольников для поля 8x8 -->
-    <!-- Каждая ячейка будет Rect (прямоугольник) -->
-    <Circle fx:id="circle00" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle01" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle02" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle03" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle04" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle05" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle06" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle07" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<StackPane fx:id="stackPane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.itis.controller.ReversiController" style="-fx-background-color: transparent">
+        <GridPane fx:id="gridPane" alignment="CENTER"
+                  hgap="5" vgap="5" style="-fx-background-color: lightgray; -fx-padding: 10;"
+                  GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" >
 
-    <!-- Вторая строка -->
-    <Circle fx:id="circle10" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle11" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle12" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle13" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle14" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle15" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle16" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle17" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle00" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle01" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle02" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle03" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle04" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle05" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle06" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle07" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="0" onMouseClicked="#handleCircleClick"/>
 
-    <!-- Третья строка -->
-    <Circle fx:id="circle20" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle21" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle22" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle23" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle24" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle25" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle26" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle27" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <!-- Вторая строка -->
+            <Circle fx:id="circle10" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle11" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle12" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle13" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle14" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle15" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle16" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle17" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="1" onMouseClicked="#handleCircleClick"/>
 
-    <!-- Четвертая строка -->
-    <Circle fx:id="circle30" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle31" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle32" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle33" radius="25" fill="red" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-    <Circle fx:id="circle34" radius="25" fill="black" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
-    <Circle fx:id="circle35" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle36" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle37" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
+            <!-- Третья строка -->
+            <Circle fx:id="circle20" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle21" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle22" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle23" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle24" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle25" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle26" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle27" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="2" onMouseClicked="#handleCircleClick"/>
 
-    <!-- Пятая строка -->
-    <Circle fx:id="circle40" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle41" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle42" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle43" radius="25" fill="black" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
-    <Circle fx:id="circle44" radius="25" fill="red" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
-    <Circle fx:id="circle45" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle46" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle47" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
+            <!-- Четвертая строка -->
+            <Circle fx:id="circle30" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle31" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle32" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle33" radius="25" fill="red" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Circle fx:id="circle34" radius="25" fill="black" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+            <Circle fx:id="circle35" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle36" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle37" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="3" onMouseClicked="#handleCircleClick"/>
 
-    <!-- Шестая строка -->
-    <Circle fx:id="circle50" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle51" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle52" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle53" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle54" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle55" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle56" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle57" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <!-- Пятая строка -->
+            <Circle fx:id="circle40" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle41" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle42" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle43" radius="25" fill="black" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+            <Circle fx:id="circle44" radius="25" fill="red" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+            <Circle fx:id="circle45" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle46" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle47" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="4" onMouseClicked="#handleCircleClick"/>
 
-    <!-- Седьмая строка -->
-    <Circle fx:id="circle60" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle61" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle62" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle63" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle64" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle65" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle66" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle67" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <!-- Шестая строка -->
+            <Circle fx:id="circle50" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle51" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle52" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle53" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle54" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle55" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle56" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle57" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="5" onMouseClicked="#handleCircleClick"/>
 
-    <!-- Восьмая строка -->
-    <Circle fx:id="circle70" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle71" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle72" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle73" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle74" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle75" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle76" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
-    <Circle fx:id="circle77" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <!-- Седьмая строка -->
+            <Circle fx:id="circle60" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle61" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle62" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle63" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle64" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle65" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle66" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle67" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="6" onMouseClicked="#handleCircleClick"/>
 
-    <Button fx:id="readyButton" text="Ready" onAction="#handleReadyClick" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+            <!-- Восьмая строка -->
+            <Circle fx:id="circle70" radius="25" fill="white" GridPane.columnIndex="0" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle71" radius="25" fill="white" GridPane.columnIndex="1" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle72" radius="25" fill="white" GridPane.columnIndex="2" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle73" radius="25" fill="white" GridPane.columnIndex="3" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle74" radius="25" fill="white" GridPane.columnIndex="4" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle75" radius="25" fill="white" GridPane.columnIndex="5" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle76" radius="25" fill="white" GridPane.columnIndex="6" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
+            <Circle fx:id="circle77" radius="25" fill="white" GridPane.columnIndex="7" GridPane.rowIndex="7" onMouseClicked="#handleCircleClick"/>
 
-</GridPane>
+            <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_RIGHT" spacing="5" style="-fx-padding: 10;" GridPane.columnIndex="8" GridPane.rowIndex="0" GridPane.rowSpan="8" >
+                <Label fx:id="usernameLabel" text="User: " style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+                <Label fx:id="roomLabel" text="Room: #" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+                <Label fx:id="turn" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+                <Button fx:id="readyButton" text="Ready" onAction="#handleReadyClick"/>
+                <Button fx:id="readyButtonTurn" text="Ready turn" onAction="#handleReadyTurnClick"/>
+            </VBox>
+        </GridPane>
+</StackPane>

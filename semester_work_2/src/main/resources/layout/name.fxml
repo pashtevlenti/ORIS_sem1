@@ -4,8 +4,10 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.text.Text?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.itis.controller.NameController" stylesheets="@../styles/style.css" styleClass="stack-pane">
     <VBox alignment="CENTER" spacing="30">
+        <Text text="Enter your username" styleClass="text"/>
         <TextField fx:id="usernameField" promptText="Enter your username" styleClass="text-field"/>
         <Button text="Ввод" onAction="#handleNameButtonAction" styleClass="button"/>
     </VBox>

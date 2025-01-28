@@ -3,7 +3,6 @@ package ru.itis;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.net.Socket;
 import java.util.*;
 
 public class GameRoom {
@@ -50,8 +49,7 @@ public class GameRoom {
             if (players.stream().allMatch(ClientHandler::isReady)) {
                 gameStarted = true;
                 players.forEach(ClientHandler::startGame); // Уведомляем игроков о начале игры
-            }
-            else {
+            } else {
                 player.sendReady();
             }
         }
@@ -65,4 +63,13 @@ public class GameRoom {
             }
         }
     }
+    public synchronized void processTurn(ClientHandler sender) {
+        for (ClientHandler player : players) {
+            if (player != sender) {
+                player.sendTurn("YourTurn");
+            }
+            else player.sendTurn("NoYourTurn");
+        }
+    }
 }
+

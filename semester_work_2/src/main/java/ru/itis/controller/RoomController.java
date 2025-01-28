@@ -1,11 +1,13 @@
 package ru.itis.controller;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.StackPane;
 import ru.itis.Client;
 
 import java.io.IOException;
@@ -34,12 +36,14 @@ public class RoomController {
                 client.connectToServer("localhost", 12345);
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/game.fxml"));
-                GridPane root = loader.load();
+                StackPane root = loader.load();
                 ReversiController reversiController = loader.getController();
-                reversiController.setUsernameAndClient(username,client);
+                reversiController.setUsernameAndClient(username,roomName,client);
                 client.sendRoomName(roomName);
 
                 roomNameField.getScene().setRoot(root);
+
+
             } catch (IOException e) {
                 e.printStackTrace();
                 showAlert("Error", "Unable to connect to the server", AlertType.ERROR);
