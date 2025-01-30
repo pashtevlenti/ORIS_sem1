@@ -46,26 +46,51 @@ public class ClientHandler implements Runnable {
                 out.println("Room is full. Please try another room.");
                 socket.close();
                 return;
+            } else {
+                out.println("addPlayer" + roomName);
             }
 
             out.println("Waiting for another player...");
-            currentRoom.waitForPlayers();
 
-            out.println("Both players connected. Send READY to start.");
 
+
+            logger.info("{} {}", rooms, currentRoom);
             while (true) {
                 String input = in.readLine();
+
+                if ("exit".equals(input)) {
+                    if (currentRoom != null) {
+                        rooms.remove(roomName);
+                        logger.info("{} {}", rooms, currentRoom);
+                        currentRoom.exit(this);
+
+                    }
+                }
+                else currentRoom.waitForPlayers();
                 if (input == null) break;
 
                 if ("READY".equals(input)) {
                     currentRoom.setPlayerReady(this);
-                } else if ("NoYourTurn".equals(input)) {
+                } else if ("NoMyMove".equals(input)) {
                     if (currentRoom != null) {
-                        currentRoom.processTurn(this);
+                        currentRoom.processMoveTurn(this);
                     }
-                } else if (input.startsWith("MOVE")) {
+                } else if ("notAvailableMoves".equals(input)) {
                     if (currentRoom != null) {
-                        currentRoom.processMove(input, this);
+                        currentRoom.checkAvailableMoves(this);
+                    }
+                } else if ("win".equals(input)) {
+                    if (currentRoom != null) {
+                        currentRoom.checkWin();
+                    }
+                }else if ("gameOver".equals(input)) {
+                    if (currentRoom != null) {
+                        rooms.remove(roomName);
+                        socket.close();
+                    }
+                }else if (input.startsWith("MOVE")) {
+                    if (currentRoom != null) {
+                        currentRoom.processMove(input);
                     }
                 }
             }
@@ -93,11 +118,11 @@ public class ClientHandler implements Runnable {
     public void sendReady() {
         out.println("READY");
     }
-    public void setIsMyTurn(boolean isMyTurn) {
-        this.isMyTurn = isMyTurn;
-    }
 
     public void sendTurn(String turn) {
         out.println(turn);
+    }
+    public Socket getSocket(){
+        return socket;
     }
 }

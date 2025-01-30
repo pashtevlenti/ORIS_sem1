@@ -3,6 +3,7 @@ package ru.itis;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.*;
 
 public class GameRoom {
@@ -55,20 +56,52 @@ public class GameRoom {
         }
     }
 
-    public synchronized void processMove(String move, ClientHandler sender) {
-        // Отправляем ход всем игрокам, кроме отправителя
+    public synchronized void processMove(String move) {
         for (ClientHandler player : players) {
-            if (player != sender) {
-                player.sendUpdate(move);
-            }
+            player.sendUpdate(move);
+
         }
     }
-    public synchronized void processTurn(ClientHandler sender) {
+    public synchronized void processMoveTurn(ClientHandler sender) {
         for (ClientHandler player : players) {
             if (player != sender) {
-                player.sendTurn("YourTurn");
+                player.sendTurn("MyMove");
             }
-            else player.sendTurn("NoYourTurn");
+            else player.sendTurn("NoMyMove");
+        }
+    }
+
+    public boolean isGameStarted() {
+        return gameStarted;
+    }
+
+    public synchronized void checkAvailableMoves(ClientHandler sender) {
+        for (ClientHandler player : players) {
+            if (player != sender) {
+                player.sendTurn("checkAvailableMovesOpponent");
+            }
+            else player.sendTurn("NoMyMove");
+        }
+    }
+
+    public void checkWin() {
+        for (ClientHandler player : players) {
+            player.sendTurn("win");
+        }
+    }
+
+    public void exit(ClientHandler sender) {
+        for (ClientHandler player : players) {
+            try {
+                if (player != sender) {
+                    player.sendTurn("exit");
+                }
+                player.getSocket().close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+
         }
     }
 }
