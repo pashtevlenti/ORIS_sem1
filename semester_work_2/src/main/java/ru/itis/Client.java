@@ -1,5 +1,7 @@
 package ru.itis;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +26,9 @@ public class Client extends Application {
     private BufferedReader in;
     private ReversiController reversiController;
     private RoomController roomController;
-
+    private final Gson gson = new GsonBuilder()
+            .enableComplexMapKeySerialization()
+            .create();
 
 
     public static void main(String[] args) {
@@ -45,37 +49,35 @@ public class Client extends Application {
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);
 
-        // Поток для получения данных от сервера
         new Thread(() -> {
             try {
                 String message;
                 while ((message = in.readLine()) != null) {
+                    Message msg = gson.fromJson(message, Message.class);
                     logger.info(message);
-                    final String receivedMessage = message;
-                    if (message.startsWith("MOVE")) {
+                    final String receivedMessage = msg.getContent();
+                    if (msg.getType().equals(ProtocolMessageType.MOVE)) {
                         Platform.runLater(() -> receiveUpdate(receivedMessage));
-                    } else if (message.equals("START")) {
+                    } else if (msg.getType().equals(ProtocolMessageType.START)) {
                         Platform.runLater(() -> reversiController.enableBoard());
-                    }else if (message.equals("MyMove")) {
+                    }else if (msg.getType().equals(ProtocolMessageType.MY_MOVE)) {
                         Platform.runLater(() -> reversiController.setMyTurn(true)); // Разрешаем ход.
-                    } else if (message.equals("NoMyMove")) {
+                    } else if (msg.getType().equals(ProtocolMessageType.NO_MY_MOVE)) {
                         Platform.runLater(() -> reversiController.setMyTurn(false));
-                    } else if (message.equals("READY")) {
+                    } else if (msg.getType().equals(ProtocolMessageType.READY)) {
                         Platform.runLater(() -> reversiController.showMessage("Ты готов, ждем пока будет готов соперник"));
                         Platform.runLater(() -> reversiController.setFlagWhoIsFirstReady(true));
-                    } else if (message.equals("checkAvailableMovesOpponent")) {
+                    } else if (msg.getType().equals(ProtocolMessageType.CHECK_AVAILABLE_MOVES_OPPONENT)) {
                         Platform.runLater(() -> reversiController.checkBoard());
-                    }else if (message.equals("win")) {
+                    }else if (msg.getType().equals(ProtocolMessageType.WIN)) {
                         Platform.runLater(() -> reversiController.checkWin());
-                    }else if (message.equals("exit")) {
+                    }else if (msg.getType().equals(ProtocolMessageType.EXIT)) {
                         Platform.runLater(() -> reversiController.showMessage("Соперник вышел, игра окончена"));
                         Platform.runLater(() -> reversiController.close());
-                    }else if (message.equals("Room is full. Please try another room.")) {
+                    }else if (msg.getType().equals(ProtocolMessageType.ROOM_FULL)) {
                         Platform.runLater(() -> roomController.showAlert("Error","Комната заполнена", Alert.AlertType.ERROR));
-                    } else if (message.startsWith("addPlayer")) {
-                        Platform.runLater(() -> roomController.addPlayerToRoom(receivedMessage.substring(9)));
-                    }else {
-                        System.out.println(message);
+                    } else if (msg.getType().equals(ProtocolMessageType.ADD_PLAYER)) {
+                        Platform.runLater(() -> roomController.addPlayerToRoom(receivedMessage));
                     }
                 }
             } catch (IOException e) {
@@ -85,11 +87,12 @@ public class Client extends Application {
     }
 
     public void sendMove(String move) {
-        out.println("MOVE " + move); // Отправляем ход на сервер
+        out.println(move);
     }
 
     public void sendReady() {
-        out.println("READY"); // Уведомляем сервер, что игрок готов
+        Message message = new Message(ProtocolMessageType.READY);
+        out.println(message.toJson());
     }
 
     public void sendTurnMove(String turnMove) {
@@ -98,8 +101,7 @@ public class Client extends Application {
 
     public void receiveUpdate(String message) {
         if (reversiController != null) {
-            String move = message.substring(5); // Убираем "MOVE "
-            reversiController.updateBoard(move);
+            reversiController.updateBoard(message);
         }
     }
 

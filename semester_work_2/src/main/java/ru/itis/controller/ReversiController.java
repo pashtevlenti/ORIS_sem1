@@ -8,6 +8,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -17,16 +19,19 @@ import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.itis.Client;
+import ru.itis.Message;
+import ru.itis.ProtocolMessageType;
 
 import java.util.List;
 
 public class ReversiController {
     private static final Logger logger = LogManager.getLogger(ReversiController.class);
 
-
     private Client client;
     @FXML
     private Label move;
+    @FXML
+    private ImageView imageView;
     @FXML
     private Label infoGame;
     @FXML
@@ -66,7 +71,8 @@ public class ReversiController {
             Stage stage = (Stage) stackPane.getScene().getWindow();
 
             stage.setOnCloseRequest(event -> {
-                client.sendTurnMove("exit");
+                Message message = new Message(ProtocolMessageType.EXIT);
+                client.sendTurnMove(message.toJson());
             });
         });
 
@@ -76,6 +82,9 @@ public class ReversiController {
         readyButtonTurnMove.setDisable(true);
         availableMove.setDisable(true);
 
+
+        imageView.setImage(new Image("bell_with_gray_background.gif"));
+        imageView.setOpacity(0);
 
         board[3][3] = 1;
         board[4][4] = 1;
@@ -106,6 +115,8 @@ public class ReversiController {
         move.setStyle("-fx-font-size: " + labelFontSize + "px; -fx-font-weight: bold");
         roomLabel.setStyle("-fx-font-size: " + labelFontSize + "px; -fx-font-weight: bold");
         infoGame.setStyle("-fx-font-size: " + labelFontSize + "px; -fx-font-weight: bold");
+        imageView.setFitWidth(labelFontSize * 3);
+        imageView.setFitHeight(labelFontSize * 3);
         if (color == 1) colorLabel.setStyle("-fx-font-size: " + labelFontSize + "px; -fx-font-weight: bold; -fx-text-fill : red");
         else colorLabel.setStyle("-fx-font-size: " + labelFontSize + "px; -fx-font-weight: bold; -fx-text-fill : black");
 
@@ -250,7 +261,9 @@ public class ReversiController {
             color = 1;
             colorLabel.setText("Красный");
             colorLabel.setStyle("-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill : red");
-            client.sendTurnMove("NoMyMove");
+            Message message = new Message(ProtocolMessageType.NO_MY_MOVE);
+            client.sendTurnMove(message.toJson());
+
         }
         infoGame.setText("Игра началась!");
     }
@@ -266,9 +279,11 @@ public class ReversiController {
         isMyTurn = isTurn;
         if (isMyTurn) {
             move.setText("Твой ход");
+            imageView.setOpacity(1);
         }
         else{
             move.setText("Ход соперника");
+            imageView.setOpacity(0);
         }
         // Например, блокируем все ячейки на поле
         for (Node node : gridPane.getChildren()) {
@@ -290,8 +305,11 @@ public class ReversiController {
                 flipDiscs(rowPrev, colPrev, color);
                 if (isMyTurn) {
                     isMyTurn = false;
-                    client.sendTurnMove("NoMyMove");
-                    client.sendMove(rowPrev + "," + colPrev + "," + color);
+                    Message message = new Message(ProtocolMessageType.NO_MY_MOVE);
+                    client.sendTurnMove(message.toJson());
+
+                    message = new Message(ProtocolMessageType.MOVE,"%s,%s,%s".formatted(rowPrev,colPrev,color));
+                    client.sendMove(message.toJson());
                 }
                 rowPrev = -1;
                 colPrev = -1;
@@ -302,7 +320,9 @@ public class ReversiController {
             }
         }
         else {
-            client.sendTurnMove("notAvailableMoves");
+            Message message = new Message(ProtocolMessageType.NOT_AVAILABLE_MOVES);
+            client.sendTurnMove(message.toJson());
+
         }
     }
 
@@ -312,7 +332,9 @@ public class ReversiController {
         }
         else {
             setMyTurn(false);
-            client.sendTurnMove("win");
+            Message message = new Message(ProtocolMessageType.WIN);
+            client.sendTurnMove(message.toJson());
+
         }
 
     }
@@ -346,12 +368,10 @@ public class ReversiController {
         else{
             infoGame.setText("Вы сыграли в ничью! У тебя %s фишек, а у соперника %s".formatted(myChip, chipOpponent));
         }
-        client.sendTurnMove("gameOver");
-    }
-    public void setTextInfoGame(String text){
-        infoGame.setText(text);
-    }
+        Message message = new Message(ProtocolMessageType.GAME_OVER);
+        client.sendTurnMove(message.toJson());
 
+    }
     public void close() {
         Stage stage = (Stage) stackPane.getScene().getWindow();
         stage.close();

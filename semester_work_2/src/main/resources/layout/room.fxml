@@ -8,8 +8,8 @@
 <?import javafx.scene.text.Text?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.itis.controller.RoomController" stylesheets="@../styles/style.css" styleClass="stack-pane">
     <VBox alignment="CENTER" spacing="30">
-        <Text text="Enter room name" styleClass="text"/>
-        <TextField fx:id="roomNameField" promptText="Enter room name" styleClass="text-field"/>
-        <Button text="Join Room" onAction="#handleJoinRoomButtonAction" styleClass="button"/>
+        <Text text="Введите номер комнаты" styleClass="text"/>
+        <TextField fx:id="roomNameField" promptText="Введите номер комнаты" styleClass="text-field"/>
+        <Button text="Присоединиться" onAction="#handleJoinRoomButtonAction" styleClass="button"/>
     </VBox>
 </StackPane>

@@ -57,17 +57,23 @@ public class GameRoom {
     }
 
     public synchronized void processMove(String move) {
+        Message message;
         for (ClientHandler player : players) {
-            player.sendUpdate(move);
-
+            message = new Message(ProtocolMessageType.MOVE,move);
+            player.sendUpdate(message.toJson());
         }
     }
     public synchronized void processMoveTurn(ClientHandler sender) {
+        Message message;
         for (ClientHandler player : players) {
             if (player != sender) {
-                player.sendTurn("MyMove");
+                message = new Message(ProtocolMessageType.MY_MOVE);
+                player.sendTurn(message.toJson());
             }
-            else player.sendTurn("NoMyMove");
+            else {
+                message = new Message(ProtocolMessageType.NO_MY_MOVE);
+                player.sendTurn(message.toJson());
+            }
         }
     }
 
@@ -76,17 +82,23 @@ public class GameRoom {
     }
 
     public synchronized void checkAvailableMoves(ClientHandler sender) {
+        Message message;
         for (ClientHandler player : players) {
             if (player != sender) {
-                player.sendTurn("checkAvailableMovesOpponent");
+                message = new Message(ProtocolMessageType.CHECK_AVAILABLE_MOVES_OPPONENT);
+                player.sendTurn(message.toJson());
             }
-            else player.sendTurn("NoMyMove");
+            else {
+                message = new Message(ProtocolMessageType.NO_MY_MOVE);
+                player.sendTurn(message.toJson());
+            }
         }
     }
 
     public void checkWin() {
         for (ClientHandler player : players) {
-            player.sendTurn("win");
+            Message message = new Message(ProtocolMessageType.WIN);
+            player.sendTurn(message.toJson());
         }
     }
 
@@ -94,7 +106,8 @@ public class GameRoom {
         for (ClientHandler player : players) {
             try {
                 if (player != sender) {
-                    player.sendTurn("exit");
+                    Message message = new Message(ProtocolMessageType.EXIT);
+                    player.sendTurn(message.toJson());
                 }
                 player.getSocket().close();
             } catch (IOException e) {

@@ -1,5 +1,7 @@
 package ru.itis;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,7 +21,7 @@ public class ClientHandler implements Runnable {
     private GameRoom currentRoom;
     private PrintWriter out;
     private boolean isReady = false;
-
+    private final Gson gson = new Gson();
     private boolean isMyTurn = true;
 
 
@@ -35,30 +37,35 @@ public class ClientHandler implements Runnable {
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true)
         ) {
             this.out = out;
+            Message message;
+            String roomName = "";
 
-            out.println("Enter room name:");
-            String roomName = in.readLine();
+            message = gson.fromJson(in.readLine(), Message.class);
+            if (message.getType().equals(ProtocolMessageType.ROOM_NAME)){
+                roomName = message.getContent();
+            }
 
             currentRoom = rooms.computeIfAbsent(roomName, GameRoom::new);
             logger.info("Player joined room: " + roomName);
 
+
             if (!currentRoom.addPlayer(this)) {
-                out.println("Room is full. Please try another room.");
+                message = new Message(ProtocolMessageType.ROOM_FULL);
+                out.println(message.toJson());
                 socket.close();
                 return;
             } else {
-                out.println("addPlayer" + roomName);
+                message = new Message(ProtocolMessageType.ADD_PLAYER,roomName);
+                out.println(message.toJson());
             }
-
-            out.println("Waiting for another player...");
-
 
 
             logger.info("{} {}", rooms, currentRoom);
             while (true) {
                 String input = in.readLine();
 
-                if ("exit".equals(input)) {
+                Message client = gson.fromJson(input, Message.class);
+                if (client.getType().equals(ProtocolMessageType.EXIT)) {
                     if (currentRoom != null) {
                         rooms.remove(roomName);
                         logger.info("{} {}", rooms, currentRoom);
@@ -69,28 +76,28 @@ public class ClientHandler implements Runnable {
                 else currentRoom.waitForPlayers();
                 if (input == null) break;
 
-                if ("READY".equals(input)) {
+                if (client.getType().equals(ProtocolMessageType.READY)){
                     currentRoom.setPlayerReady(this);
-                } else if ("NoMyMove".equals(input)) {
+                } else if (client.getType().equals(ProtocolMessageType.NO_MY_MOVE)) {
                     if (currentRoom != null) {
                         currentRoom.processMoveTurn(this);
                     }
-                } else if ("notAvailableMoves".equals(input)) {
+                } else if (client.getType().equals(ProtocolMessageType.NOT_AVAILABLE_MOVES)) {
                     if (currentRoom != null) {
                         currentRoom.checkAvailableMoves(this);
                     }
-                } else if ("win".equals(input)) {
+                } else if (client.getType().equals(ProtocolMessageType.WIN)) {
                     if (currentRoom != null) {
                         currentRoom.checkWin();
                     }
-                }else if ("gameOver".equals(input)) {
+                }else if (client.getType().equals(ProtocolMessageType.GAME_OVER)) {
                     if (currentRoom != null) {
                         rooms.remove(roomName);
                         socket.close();
                     }
-                }else if (input.startsWith("MOVE")) {
+                }else if (client.getType().equals(ProtocolMessageType.MOVE)) {
                     if (currentRoom != null) {
-                        currentRoom.processMove(input);
+                        currentRoom.processMove(client.getContent());
                     }
                 }
             }
@@ -104,7 +111,8 @@ public class ClientHandler implements Runnable {
     }
 
     public void startGame() {
-        out.println("START");
+        Message message = new Message(ProtocolMessageType.START);
+        out.println(message.toJson());
     }
 
     public boolean isReady() {
@@ -116,7 +124,8 @@ public class ClientHandler implements Runnable {
     }
 
     public void sendReady() {
-        out.println("READY");
+        Message message = new Message(ProtocolMessageType.READY);
+        out.println(message.toJson());
     }
 
     public void sendTurn(String turn) {

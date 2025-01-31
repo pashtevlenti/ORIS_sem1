@@ -20,7 +20,7 @@ public class NameController {
     private void handleNameButtonAction() {
         String username = usernameField.getText();
         if (username.isEmpty()) {
-            showAlert("Error", "Username cannot be empty", AlertType.ERROR);
+            showAlert("Error", "Имя не может быть пустым", AlertType.ERROR);
         } else {
             try {
                 // Создаем новый клиент

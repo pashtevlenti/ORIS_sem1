@@ -11,19 +11,18 @@ import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.itis.Client;
-
+import ru.itis.Message;
+import ru.itis.ProtocolMessageType;
 
 
 import java.io.IOException;
-
 
 
 public class RoomController {
     Logger logger = LogManager.getLogger(RoomController.class);
     private String username;
     private Client client;
-    private Parent previousRoot;
-    private Stage primaryStage;
+
 
     @FXML
     private TextField roomNameField;
@@ -38,11 +37,12 @@ public class RoomController {
     private void handleJoinRoomButtonAction() {
         String roomName = roomNameField.getText();
         if (roomName.isEmpty()) {
-            showAlert("Error", "Room name cannot be empty", AlertType.ERROR);
+            showAlert("Error", "Комната не может быть пустой", AlertType.ERROR);
         } else{
             try {
-                client.connectToServer("localhost", 12345);
-                client.sendRoomName(roomName);
+                client.connectToServer("192.168.1.101", 12345);
+                Message message = new Message(ProtocolMessageType.ROOM_NAME,roomName);
+                client.sendRoomName(message.toJson());
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
